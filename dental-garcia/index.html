@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental García - Consultorio Dental en Toluca</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0ea5e9;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0ea5e9;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .services {
+            padding: 4rem 1rem;
+            background: #f8f9fa;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 24px rgba(14,165,233,0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #0ea5e9;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .about {
+            padding: 4rem 1rem;
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #0ea5e9 0%, #06b6d4 100%);
+            height: 300px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact {
+            padding: 3rem 1rem;
+            background: #f8f9fa;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .info-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .info-label {
+            font-weight: 700;
+            color: #0ea5e9;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-text {
+            color: #666;
+        }
+
+        footer {
+            background: #1e293b;
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #0ea5e9;
+        }
+
+        .footer-section p {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding-top: 2rem;
+            color: #cbd5e1;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            z-index: 50;
+        }
+
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37,211,102,0.6);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-button {
+                padding: 0.8rem 2rem;
+                font-size: 0.95rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .whatsapp-button {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 55px;
+                height: 55px;
+                font-size: 1.8rem;
+            }
+        }
+
+        .highlight {
+            color: #0ea5e9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">Dental García</a>
+            <nav>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Tu Sonrisa, Nuestra Especialidad</h1>
+            <p>Consultorio Dental Profesional en Toluca</p>
+            <p class="tagline">Cuidamos tu salud bucal con tecnología moderna y atención personalizada</p>
+            <a href="https://wa.me/527221234567?text=Hola%20Dental%20García,%20quisiera%20agendar%20una%20cita" class="cta-button">Agendar Cita Ahora</a>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="services-container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🪥</div>
+                    <h3>Limpieza Dental</h3>
+                    <p>Eliminación profesional de placa y sarro para una sonrisa más limpia y saludable.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3>Blanqueamiento</h3>
+                    <p>Técnicas avanzadas para blanquear tus dientes y recuperar su brillo natural.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">😁</div>
+                    <h3>Ortodoncia</h3>
+                    <p>Tratamientos de alineación dental para lograr la sonrisa perfecta que deseas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚕️</div>
+                    <h3>Extracciones</h3>
+                    <p>Procedimientos seguros y cómodos realizados por profesionales calificados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="nosotros">
+        <div class="about-container">
+            <h2 class="section-title">Sobre Dental García</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>¿Por qué Elegirnos?</h2>
+                    <p>En <span class="highlight">Dental García</span>, somos especialistas en brindar atención dental de calidad a la comunidad de Toluca y sus alrededores.</p>
+                    <p>Contamos con un equipo profesional altamente capacitado, tecnología moderna y un ambiente cómodo para que tu experiencia sea la mejor.</p>
+                    <p>Tu satisfacción y tu salud bucal son nuestra prioridad. Nos comprometemos a ofrecerte tratamientos efectivos y personalizados según tus necesidades.</p>
+                </div>
+                <div class="about-image">🦷</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <h2>Contacta con Nosotros</h2>
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="info-label">📍 Ubicación</div>
+                    <div class="info-text">Toluca, Estado de México</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">📱 WhatsApp</div>
+                    <div class="info-text">+52 722 123 4567</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">⏰ Horario</div>
+                    <div class="info-text">Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábado: 9:00 AM - 2:00 PM</div>
+                </div>
+            </div>
+            <a href="https://wa.me/527221234567?text=Hola%20Dental%20García,%20quisiera%20agendar%20una%20cita" class="cta-button">Enviar Mensaje por WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Dental García</h4>
+                    <p>Tu consultorio dental de confianza en Toluca. Cuidamos tu sonrisa con profesionalismo y dedicación.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <p>• Limpieza Dental<br>• Blanqueamiento<br>• Ortodoncia<br>• Extracciones</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horario</h4>
+                    <p>Lunes a Viernes<br>9:00 AM - 6:00 PM<br><br>Sábado<br>9:00 AM - 2:00 PM</p>
+                </div>
+            </div>
+            <div class="footer-bottom
