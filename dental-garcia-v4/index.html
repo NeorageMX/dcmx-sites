@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dental García — Tu sonrisa, nuestra especialidad</title>
+  <style>
+    :root{
+      --brand: #0ea5e9;
+      --brand-600: #0598d1;
+      --brand-300: #67dff8;
+      --accent: #06b6d4;
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --glass-2: rgba(14,165,233,0.06);
+      --success:#16a34a;
+      --wa:#25D366;
+      --shadow: 0 8px 24px rgba(2,6,23,0.08);
+      --radius: 14px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* Reset & base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,var(--bg),#eef9ff);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      font-size:16px;
+      padding-bottom:100px;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* Container */
+    .container{
+      width:100%;
+      max-width:1100px;
+      margin:0 auto;
+      padding:20px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      color:white;
+      font-weight:700;
+      box-shadow: 0 6px 18px rgba(14,165,233,0.18);
+      background: linear-gradient(135deg,var(--brand),var(--brand-600));
+      flex-shrink:0;
+    }
+    .brand h1{
+      margin:0;
+      font-size:18px;
+      letter-spacing:0.2px;
+    }
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:2px;
+    }
+
+    nav{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .nav-link{
+      font-weight:600;
+      color:var(--muted);
+      font-size:14px;
+      padding:8px 12px;
+      border-radius:10px;
+      transition:all 180ms ease;
+    }
+    .nav-link:hover{background:var(--glass-2); color:var(--brand-600); transform:translateY(-2px)}
+
+    /* HERO */
+    .hero{
+      display:grid;
+      gap:18px;
+      grid-template-columns:1fr;
+      align-items:center;
+      padding:28px 0 10px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+      overflow:hidden;
+      position:relative;
+      border: 1px solid rgba(14,165,233,0.06);
+    }
+
+    .hero-grid{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .kicker{
+      display:inline-block;
+      background: linear-gradient(90deg,var(--brand-300),var(--brand));
+      color:#04303a;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      box-shadow: 0 6px 18px rgba(14,165,233,0.08);
+    }
+
+    .headline{
+      font-size:28px;
+      margin:0;
+      color:#052025;
+      letter-spacing:-0.4px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .cta-row{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      margin-top:6px;
+      flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:700;
+      cursor:pointer;
+      border:0;
+      transition:transform 160ms ease, box-shadow 160ms ease;
+      box-shadow: 0 8px 20px rgba(14,165,233,0.12);
+      background: linear-gradient(90deg,var(--brand),var(--brand-600));
+      color:white;
+      text-decoration:none;
+    }
+    .btn:hover{transform:translateY(-4px); box-shadow: 0 16px 40px rgba(14,165,233,0.16)}
+
+    .btn-secondary{
+      background:transparent;
+      border:1px solid rgba(7,89,133,0.06);
+      color:var(--brand-600);
+      font-weight:700;
+      padding:12px 14px;
+      border-radius:12px;
+    }
+    .cta-note{font-size:13px;color:var(--muted)}
+
+    /* Visual aside: SVG tooth / decorative shapes */
+    .visual{
+      display:grid;
+      place-items:center;
+      padding:12px;
+    }
+    .illustration{
+      width:220px;
+      max-width:100%;
+      filter:drop-shadow(0 12px 30px rgba(14,165,233,0.12));
+      transform:translateY(0);
+      animation:float 6s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%{ transform:translateY(0)}
+      50%{ transform:translateY(-10px)}
+      100%{ transform:translateY(0)}
+    }
+
+    /* Services */
+    .services{
+      margin-top:18px;
+      display:grid;
+      gap:12px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+    }
+    .card{
+      background:linear-gradient(180deg, var(--card), #fbfeff);
+      border-radius:12px;
+      padding:14px;
+      box-shadow: 0 10px 26px rgba(2,6,23,0.04);
+      transition:transform 200ms ease, box-shadow 200ms ease;
+      border:1px solid rgba(14,165,233,0.04);
+    }
+    .card:hover{transform:translateY(-6px); box-shadow: 0 20px 40px rgba(2,6,23,0.06)}
+    .service-emoji{
+      font-size:28px;
+      display:inline-grid;
+      place-items:center;
+      width:48px;height:48px;border-radius:10px;
+      background:linear-gradient(180deg,var(--brand-300),rgba(14,165,233,0.08));
+      box-shadow:0 6px 18px rgba(14,165,233,0.06);
+    }
+    .service-title{margin:6px 0 0;font-weight:800;color:#062f36}
+    .service-desc{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+    /* Nosotros */
+    .about{
+      display:grid;
+      gap:12px;
+      margin-top:20px;
+      grid-template-columns:1fr;
+      align-items:center;
+    }
+    .about-inner{
+      display:flex;
+      gap:16px;
+      align-items:center;
+    }
+    .avatar{
+      width:84px;height:84px;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--brand),var(--brand-300));
+      color:white;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      font-size:28px;
+      box-shadow: 0 12px 30px rgba(14,165,233,0.12);
+      flex-shrink:0;
+    }
+    .about-text h3{margin:0;font-size:18px}
+    .about-text p{margin:6px 0 0;color:var(--muted)}
+
+    /* Contact */
+    .contact{
+      margin-top:20px;
+      display:grid;
+      gap:12px;
+      grid-template-columns:1fr;
+    }
+    form{
+      display:grid;
+      gap:10px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.88));
+      padding:14px;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      border:1px solid rgba(14,165,233,0.04);
+    }
+    .row{
+      display:grid;
+      gap:8px;
+      grid-template-columns:1fr;
+    }
+    input, textarea, select{
+      padding:12px;
+      border-radius:10px;
+      border:1px solid rgba(15,23,42,0.06);
+      font-size:15px;
+      outline:none;
+      background:transparent;
+    }
+    textarea{min-height:110px; resize:vertical}
+    .form-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-start;
+      flex-wrap:wrap;
+    }
+    .note{font-size:13px;color:var(--muted)}
+
+    /* Footer */
+    footer{
+      margin-top:28px;
+      padding:18px 0;
+      color:var(--muted);
+      font-size:14px;
+      border-top:1px solid rgba(2,6,23,0.03);
+    }
+    .footer-grid{
+      display:flex;
+      gap:12px;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    /* WhatsApp floating */
+    .whatsapp{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      width:64px;
+      height:64px;
+      border-radius:999px;
+      background:linear-gradient(180deg,var(--wa), #1ebe57);
+      display:grid;
+      place-items:center;
+      box-shadow: 0 12px 30px rgba(37,211,102,0.18);
+      z-index:999;
+      transition:transform 160ms ease;
+    }
+    .whatsapp:active{transform:scale(0.96)}
+    .whatsapp svg{width:30px;height:30px;fill:white}
+
+    /* Responsive */
+    @media (min-width:800px){
+      .hero{grid-template-columns:1.2fr 0.8fr}
+      .hero-grid{padding-right:8px}
+      .services .grid{grid-template-columns:repeat(4,1fr)}
+      .about{grid-template-columns: 1fr 400px}
+      .contact{grid-template-columns: 1fr 400px}
+    }
+
+    /* subtle reveal */
+    .reveal{opacity:0;transform:translateY(12px);transition:opacity 600ms ease, transform 600ms ease}
+    .reveal.show{opacity:1;transform:translateY(0)}
+
+    /* small utilities */
+    .muted{color:var(--muted);font-size:13px}
+    .pill{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(14,165,233,0.06);color:var(--brand-600);font-weight:700}
+    .legal{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">DG</div>
+        <div>
+          <h1>Dental García</h1>
+          <p>Toluca · Consultorio dental</p>
+        </div>
+      </div>
+      <nav aria-label="Navegación principal">
+        <a class="nav-link" href="#servicios">Servicios</a>
+        <a class="nav-link" href="#nosotros">Nosotros</a>
+        <a class="nav-link" href="#contacto">Contacto</a>
+        <a class="nav-link" href="#agenda" style="background:linear-gradient(90deg,var(--brand-300),var(--brand)); color:white">Agenda</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-card reveal show" id="hero">
+          <div class="hero-grid">
+            <span class="kicker">Sonríe con confianza</span>
+            <h2 class="headline">Dental García — Tu sonrisa, nuestra especialidad</h2>
+            <p class="sub">En el corazón de Toluca, ofrecemos atención dental integral: limpieza, blanqueamiento, ortodoncia e implantes con tecnología moderna y trato humano.</p>
+
+            <div class="cta-row">
+              <a class="btn" href="#contacto" id="main-cta">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" style="opacity:.95">
+                  <path d="M2 21l21-9L2 3v7l15 2-15 2v7z" fill="white" />
+                </svg>
+                Agenda tu cita
+              </a>
+              <a class="btn-secondary" href="tel:+527221234567">Llámanos: +52 722 123 4567</a>
+              <div class="cta-note">Promoción inicial: valoración sin costo al reservar en línea.</div>
+            </div>
+
+            <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+              <div class="pill">Limpieza 🪥</div>
+              <div class="pill">Blanqueamiento ✨</div>
+              <div class="pill">Ortodoncia 🦷</div>
+              <div class="pill">Implantes 🦷🔩</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="visual reveal show" aria-hidden="true">
+          <!-- Decorative SVG tooth -->
+          <svg class="illustration" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de diente">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#ecfeff"/>
+                <stop offset="0.5" stop-color="#d9fbff"/>
+                <stop offset="1" stop-color="#d8f6ff"/>
+              </linearGradient>
+              <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#0ea5e9"/>
+                <stop offset="1" stop-color="#67dff8"/>
+              </linearGradient>
+            </defs>
+            <rect width="100%" height="100%" rx="28" fill="url(#g1)"/>
+            <g transform="translate(24,24)" stroke="none" fill="url(#g2)">
+              <path d="M90 10c-22 0-40 18-40 40 0 14 6 22 6 40 0 14-3 22-8 36-2 5 0 12 5 14 4 2 9 1 13-2 9-6 22-9 32-9 10 0 23 3 32 9 4 3 9 4 13 2 5-2 7-9 5-14-5-14-8-22-8-36 0-18 6-26 6-40 0-22-18-40-40-40-10 0-18 3-24 9-6-6-14-9-24-9z"/>
+            </g>
+            <g transform="translate(34,40)">
+              <circle cx="80" cy="60" r="6" fill="white" opacity="0.9" />
+              <path d="M60 30c10-8 28-8 38 0" fill="none" stroke="white" stroke-opacity="0.9" stroke-width="6" stroke-linecap="round"/>
+            </g>
+          </svg>
+        </aside>
+      </section>
+
+      <section id="servicios" class="services reveal" aria-labelledby="servicios-title">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <h3 id="servicios-title" style="margin:0">Servicios principales</h3>
+          <div class="muted">Expertos en distintas especialidades dentales · Toluca</div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="service-emoji">🪥</div>
+              <div>
+                <div class="service-title">Limpieza profesional</div>
+                <div class="service-desc">Eliminamos placa y sarro con técnicas suaves y efectivas para mantener tus encías sanas.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="service-emoji">✨</div>
+              <div>
+                <div class="service-title">Blanqueamiento</div>
+                <div class="service-desc">Resultados visibles con tratamientos seguros y personalizados según tu esmalte dental.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="service-emoji">🦷</div>
+              <div>
+                <div class="service-title">Ortodoncia</div>
+                <div class="service-desc">Opciones estéticas y funcionales: brackets tradicionales y alineadores para todas las edades.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="service-emoji">🦷🔩</div>
+              <div>
+                <div class="service-title">Implantes</div>
+                <div class="service-desc">Recupera función y estética con implantes de alta calidad y planificación 3D.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="nosotros" class="about reveal" aria-labelledby="nosotros-title">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <h3 id="nosotros-title" style="margin:0">Nosotros</h3>
+          <p class="muted" style="margin:0">Un equipo dedicado a brindar atención humana y profesional. Tecnología actual, materiales seguros y planes accesibles.</p>
+        </div>
+
+        <div class="about-inner" style="margin-top:6px">
+          <div class="avatar" aria-hidden="true">DG</div>
+          <div class="about-text">
+            <h3>Clínica Dental en Toluca</h3>
+            <p>En Dental García, tu comodidad es prioritaria. Desde la primera consulta evaluamos tu caso y proponemos alternativas claras y honestas. Nuestro objetivo: sonrisas duraderas y pacientes informados.</p>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <div class="pill">Atención personalizada</div>
+              <div class="pill">Ambiente seguro</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="contact reveal" aria-labelledby="contacto-title">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3 id="contacto-title" style="margin:0">Contacto y reserva</h3>
+          <div class="muted">Responderemos lo antes posible</div>
+        </div>
+
+        <form id="contactForm" aria-label="Formulario de contacto">
+          <div class="row">
+            <input type="text" id="name" name="name" placeholder="Nombre completo" required aria-label="Nombre completo">
+          </div>
+          <div class="row" style="grid-template-columns: 1fr 1fr; display:grid; gap:10px;">
+            <input type="tel" id="phone" name="phone" placeholder="Teléfono (ej. 7221234567)" required aria-label="Teléfono">
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" aria-label="Correo electrónico">
+          </div>
+          <div class="row">
+            <select id="service" name="service" aria-label="Servicio">
+              <option value="Limpieza">Limpieza</option>
+              <option value="Blanqueamiento">Blanqueamiento</option>
+              <option value="Ortodoncia">Ortodoncia</option>
+              <option value="Implantes">Implantes</option>
+            </select>
+          </div>
+          <div class="row">
+            <textarea id="message" name="message" placeholder="Cuéntanos brevemente tu consulta o problema (opcional)" aria-label="Mensaje"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn" id="sendBtn">
+              Enviar y reservar vía WhatsApp
+            </button>
+            <a class="btn-secondary" href="tel:+527221234567">Llamar ahora</a>
+            <div class="note">También puedes escribirnos por WhatsApp al +52 722 123 4567</div>
+          </div>
+
+          <div id="feedback" class="muted" style="display:none;margin-top:8px"></div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="reveal" aria-label="Pie de página">
+      <div class="footer-grid">
+        <div>
+          <strong>Dental García</strong>
+          <div class="legal">Toluca · Atención con cita previa</div>
+        </div>
+        <div class="muted">
+          WhatsApp: <a href="https://wa.me/527221234567" style="color:var(--brand-600);font-weight:700">+52 722 123 4567</a><br>
+          Correo: <a href="mailto:contacto@dentalgarcia.local" style="color:var(--muted)">contacto@dentalgarcia.local</a>
+        </div>
+      </div>
+      <div style="margin-top:12px" class="muted">© <span id="year"></span> Dental García. Todos los derechos reservados.</div>
+    </footer>
+  </div>
+
+  <!-- WhatsApp floating button -->
+  <a class="whatsapp" href="https://wa.me/527221234567" aria-label="Abrir chat de WhatsApp" id="waBtn" target="_blank" rel="noopener noreferrer">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M20.52 3.48A11.89 11.89 0 0012 0C5.372 0 .11 5.264.11 11.89c0 2.096.548 4.142 1.594 5.957L0 24l6.387-1.67A11.868 11.868 0 0012 23.78c6.628 0 11.89-5.264 11.89-11.89 0-3.18-1.24-6.17-3.37-8.41zM12 21.82c-1.1 0-2.17-.27-3.12-.78l-.22-.11-3.79 1 1.01-3.69-.12-.24A8.05 8.05 0 013.1 11.89 8.9 8.9 0 0112 3c4.93 0 8.94 4 8.94 8.89 0 4.92-4.01 8.93-8.94 8.93z"/>
+      <path d="M17.12 14.78c-.25-.12-1.48-.73-1.71-.81-.23-.09-.39-.12-.56.12-.17.23-.67.81-.82.98-.15.17-.3.19-.55.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.24-1.49-1.38-1.73-.14-.24-.02-.37.11-.49.12-.12.25-.3.37-.45.12-.15.16-.25.25-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.47-.41-.4-.56-.41l-.48-.01c-.16 0-.42.06-.64.31-.22.26-.86.84-.86 2.06 0 1.22.88 2.4 1 2.57.12.17 1.76 2.78 4.26 3.9 2.5 1.11 2.5.74 2.95.69.45-.05 1.48-.6 1.69-1.18.2-.57.2-1.06.14-1.16-.06-.11-.25-.17-.5-.29z" fill="#fff"/>
+    </svg>
+  </a>
+
+  <script>
+    // Small JS for interactions: form -> WhatsApp prefill, reveal on scroll, date
+    (function(){
+      const yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Intersection Observer for reveal
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('show');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+      // Form submission -> WhatsApp with prefilled message
+      const form = document.getElementById('contactForm');
+      const feedback = document.getElementById('feedback');
+      const waNumber = '527221234567';
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value.trim();
+
+        if(!name || !phone){
+          feedback.style.display = 'block';
+          feedback.textContent = 'Por favor completa tu nombre y teléfono para continuar.';
+          feedback.style.color = '#b91c1c';
+          return;
+        }
+
+        // Build message
+        const txt = `Hola Dental García 👋%0AMe llamo *${encodeURIComponent(name)}*.%0A`;
+        const txt2 = `Teléfono: ${encodeURIComponent(phone)}%0AServicio: ${encodeURIComponent(service)}%0A`;
+        const txt3 = email ? `Correo: ${encodeURIComponent(email)}%0A` : '';
+        const txt4 = message ? `Mensaje: ${encodeURIComponent(message)}%0A` : '';
+        const final = txt + txt2 + txt3 + txt4 + '%0A¿Tienen disponibilidad para agendar una valoración?';
+
+        const url = 'https://wa.me/' + waNumber + '?text=' + final;
+        // open in new tab
+        window.open(url, '_blank');
+
+        feedback.style.display = 'block';
+        feedback.style.color = 'var(--brand-600)';
+        feedback.textContent = 'Redirigiendo a WhatsApp para completar la reserva...';
+        setTimeout(()=>{ feedback.style.display='none'; }, 5000);
+        form.reset();
+      });
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const hash = this.getAttribute('href');
+          if(hash.length > 1){
+            e.preventDefault();
+            const target = document.querySelector(hash);
+            if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+          }
+        });
+      });
+
+      // CTA main -> open contact
+      const mainCta = document.getElementById('main-cta');
+      if(mainCta){
+        mainCta.addEventListener('click', (e) => {
+          // smooth handled above
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
