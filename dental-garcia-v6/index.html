@@ -1,0 +1,225 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Dental García – Tu sonrisa, nuestra especialidad</title><style>
+:root{--primary:#0ea5e9;--primary-dark:#0369a1;--primary-light:#e0f2fe;--dark:#0f172a;--dark2:#1e293b;--text:#334155;--light:#f8fafc;--white:#ffffff;--green:#25D366}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;color:var(--text);background:var(--white)}
+a{text-decoration:none;color:inherit}
+.btn{display:inline-block;padding:.85rem 2rem;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;border:none;transition:all .3s ease}
+.btn-primary{background:var(--white);color:var(--primary);box-shadow:0 4px 20px rgba(0,0,0,.2)}
+.btn-primary:hover{background:var(--primary-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.25)}
+.btn-wa{background:var(--green);color:var(--white);box-shadow:0 4px 18px rgba(37,211,102,.4)}
+.btn-wa:hover{background:#1ebe5d;transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,211,102,.5)}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(15,23,42,.85);backdrop-filter:blur(10px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+.logo{color:var(--white);font-size:1.4rem;font-weight:800;letter-spacing:-0.5px}
+.logo span{color:var(--primary)}
+.nav-links{display:flex;gap:1.8rem}
+.nav-links a{color:rgba(255,255,255,.8);font-size:.9rem;font-weight:500;transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+/* HERO */
+#hero{min-height:100vh;background:linear-gradient(135deg,var(--primary-dark) 0%,var(--primary) 60%,#38bdf8 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 1.5rem 6rem;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-content{position:relative;max-width:780px}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.2);color:var(--white);padding:.4rem 1.2rem;border-radius:50px;font-size:.85rem;font-weight:600;margin-bottom:1.5rem;border:1px solid rgba(255,255,255,.3)}
+#hero h1{font-size:clamp(2.4rem,6vw,4rem);color:var(--white);font-weight:900;line-height:1.15;margin-bottom:1.2rem;letter-spacing:-1px}
+#hero p{font-size:clamp(1rem,2.5vw,1.25rem);color:rgba(255,255,255,.9);max-width:540px;margin:0 auto 2.5rem;line-height:1.7}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-stat{display:flex;gap:2.5rem;justify-content:center;margin-top:3.5rem;flex-wrap:wrap}
+.stat-item{text-align:center;color:var(--white)}
+.stat-num{font-size:2rem;font-weight:900;display:block}
+.stat-label{font-size:.8rem;opacity:.8;text-transform:uppercase;letter-spacing:1px}
+/* SERVICES */
+#servicios{padding:6rem 1.5rem;background:var(--light)}
+.section-tag{text-align:center;color:var(--primary);font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:.8rem}
+.section-title{text-align:center;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;color:var(--dark);margin-bottom:.8rem;letter-spacing:-0.5px}
+.section-sub{text-align:center;color:#64748b;max-width:520px;margin:0 auto 3.5rem;line-height:1.7}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.8rem;max-width:1100px;margin:0 auto}
+.service-card{background:var(--white);border-radius:16px;padding:2.2rem 1.8rem;box-shadow:0 2px 20px rgba(0,0,0,.06);transition:all .3s ease;border:1px solid rgba(14,165,233,.08);text-align:center}
+.service-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(14,165,233,.15);border-color:var(--primary)}
+.service-icon{font-size:3rem;margin-bottom:1.2rem;display:block}
+.service-card h3{font-size:1.15rem;font-weight:800;color:var(--dark);margin-bottom:.7rem}
+.service-card p{color:#64748b;font-size:.92rem;line-height:1.6}
+.service-tag{display:inline-block;background:var(--primary-light);color:var(--primary);font-size:.75rem;font-weight:700;padding:.3rem .9rem;border-radius:50px;margin-top:1rem}
+/* NOSOTROS */
+#nosotros{padding:6rem 1.5rem;background:var(--white)}
+.about-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text h2{font-size:clamp(1.8rem,4vw,2.4rem);font-weight:900;color:var(--dark);margin-bottom:1.2rem;letter-spacing:-0.5px}
+.about-text p{color:#64748b;line-height:1.8;margin-bottom:1.5rem}
+.about-list{list-style:none;display:flex;flex-direction:column;gap:.9rem}
+.about-list li{display:flex;align-items:flex-start;gap:.9rem;color:var(--text);font-size:.95rem;line-height:1.5}
+.about-list li::before{content:'✓';display:flex;align-items:center;justify-content:center;min-width:26px;height:26px;background:var(--primary);color:var(--white);border-radius:50%;font-size:.8rem;font-weight:900;margin-top:1px}
+.about-box{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-dark) 100%);border-radius:20px;padding:3rem 2.5rem;color:var(--white);text-align:center;box-shadow:0 20px 60px rgba(14,165,233,.3)}
+.about-box .big-emoji{font-size:4.5rem;display:block;margin-bottom:1.5rem}
+.about-box h3{font-size:1.5rem;font-weight:900;margin-bottom:1rem}
+.about-box p{opacity:.9;line-height:1.7;margin-bottom:1.5rem;font-size:.95rem}
+.about-features{display:flex;flex-direction:column;gap:.8rem;margin-top:.5rem}
+.feature-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:.5rem 1.2rem;font-size:.88rem;font-weight:600}
+/* CONTACTO */
+#contacto{padding:6rem 1.5rem;background:var(--dark2);text-align:center}
+#contacto .section-tag{color:#38bdf8}
+#contacto .section-title{color:var(--white)}
+#contacto .section-sub{color:rgba(255,255,255,.6)}
+.contact-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:800px;margin:0 auto 3rem}
+.contact-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.8rem 1.5rem;color:var(--white)}
+.contact-card .icon{font-size:2rem;margin-bottom:.8rem;display:block}
+.contact-card h4{font-size:.85rem;text-transform:uppercase;letter-spacing:1px;opacity:.6;margin-bottom:.5rem;font-weight:600}
+.contact-card p{font-size:1rem;font-weight:700;line-height:1.5}
+.wa-btn-big{font-size:1.15rem;padding:1.1rem 2.8rem;border-radius:50px;display:inline-flex;align-items:center;gap:.8rem}
+/* FOOTER */
+footer{background:var(--dark);padding:4rem 1.5rem 2rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem;max-width:1100px;margin:0 auto 3rem}
+.footer-col h4{color:var(--white);font-size:1rem;font-weight:800;margin-bottom:1.2rem}
+.footer-col p,.footer-col a{color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.8;display:block;transition:color .3s}
+.footer-col a:hover{color:var(--primary)}
+.footer-logo{color:var(--white);font-size:1.3rem;font-weight:900;margin-bottom:.8rem}
+.footer-logo span{color:var(--primary)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;text-align:center;color:rgba(255,255,255,.35);font-size:.82rem;max-width:1100px;margin:0 auto}
+/* FLOATING WA */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:999;background:var(--green);color:var(--white);padding:.9rem 1.5rem;border-radius:50px;font-weight:700;font-size:.95rem;box-shadow:0 4px 20px rgba(37,211,102,.5);display:flex;align-items:center;gap:.6rem;animation:pulse 2.5s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5)}50%{box-shadow:0 4px 40px rgba(37,211,102,.8)}}
+.wa-float:hover{background:#1ebe5d;transform:scale(1.05)}
+@media(max-width:768px){.about-wrap{grid-template-columns:1fr}.nav-links{display:none}.wa-float span{display:none}.wa-float{padding:1rem;border-radius:50%}}
+</style></head>
+<body>
+
+<nav>
+  <div class="logo">Dental<span>García</span></div>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">📍 Toluca, Estado de México</div>
+    <h1>Tu sonrisa,<br>nuestra especialidad</h1>
+    <p>En Dental García transformamos sonrisas con tecnología de vanguardia, atención personalizada y los mejores especialistas en Toluca.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn btn-primary">📅 Agendar cita</a>
+      <a href="https://wa.me/527221234567" target="_blank" class="btn btn-wa">💬 WhatsApp</a>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-item"><span class="stat-num">+5,000</span><span class="stat-label">Pacientes felices</span></div>
+      <div class="stat-item"><span class="stat-num">15+</span><span class="stat-label">Años de experiencia</span></div>
+      <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Compromiso dental</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <p class="section-tag">Lo que ofrecemos</p>
+  <h2 class="section-title">Nuestros servicios dentales</h2>
+  <p class="section-sub">Contamos con tratamientos completos para cuidar tu salud bucal en un ambiente moderno y cómodo.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🦷</span>
+      <h3>Limpieza Dental</h3>
+      <p>Eliminamos sarro, manchas y bacterias para mantener tu boca sana y tu sonrisa brillante. Recomendada cada 6 meses.</p>
+      <span class="service-tag">Preventivo</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">✨</span>
+      <h3>Blanqueamiento</h3>
+      <p>Técnica profesional que aclara tus dientes varios tonos en una sola sesión. Resultados visibles e inmediatos.</p>
+      <span class="service-tag">Estético</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">😬</span>
+      <h3>Ortodoncia</h3>
+      <p>Alineamos tu dentadura con brackets tradicionales o alineadores transparentes. Sonrisa perfecta paso a paso.</p>
+      <span class="service-tag">Correctivo</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔩</span>
+      <h3>Implantes Dentales</h3>
+      <p>Reemplazamos dientes perdidos con implantes de titanio de alta durabilidad. Funcionan y se ven como dientes naturales.</p>
+      <span class="service-tag">Restaurativo</span>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="about-wrap">
+    <div class="about-text">
+      <p class="section-tag" style="text-align:left;margin-bottom:.5rem">¿Por qué elegirnos?</p>
+      <h2>Especialistas comprometidos con tu salud bucal</h2>
+      <p>En Dental García combinamos experiencia, tecnología de punta y un trato cálido para ofrecerte la mejor atención dental en Toluca. Cada paciente es único y merece un tratamiento personalizado.</p>
+      <ul class="about-list">
+        <li>Personal altamente capacitado y certificado</li>
+        <li>Equipo dental de última generación</li>
+        <li>Instalaciones modernas, limpias y seguras</li>
+        <li>Planes de pago flexibles y accesibles</li>
+        <li>Horarios amplios para tu comodidad</li>
+        <li>Ambiente tranquilo, ideal para toda la familia</li>
+      </ul>
+    </div>
+    <div class="about-box">
+      <span class="big-emoji">😊</span>
+      <h3>Tu bienestar es nuestra prioridad</h3>
+      <p>Desde la primera consulta hasta el final de tu tratamiento, te acompañamos en cada paso para garantizar resultados excepcionales.</p>
+      <div class="about-features">
+        <div class="feature-pill">🏆 Atención de calidad</div>
+        <div class="feature-pill">💡 Tecnología avanzada</div>
+        <div class="feature-pill">❤️ Trato personalizado</div>
+        <div class="feature-pill">📍 Ubicación céntrica en Toluca</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contacto">
+  <p class="section-tag">Contáctanos hoy</p>
+  <h2 class="section-title">¡Agenda tu cita ahora!</h2>
+  <p class="section-sub">Estamos listos para atenderte. Escríbenos por WhatsApp y reserva tu consulta en minutos.</p>
+  <div class="contact-cards">
+    <div class="contact-card">
+      <span class="icon">📍</span>
+      <h4>Ubicación</h4>
+      <p>Toluca, Estado de México</p>
+    </div>
+    <div class="contact-card">
+      <span class="icon">📱</span>
+      <h4>WhatsApp</h4>
+      <p>722 123 4567</p>
+    </div>
+    <div class="contact-card">
+      <span class="icon">🕐</span>
+      <h4>Horarios</h4>
+      <p>Lun–Vie 9am–7pm<br>Sáb 9am–2pm</p>
+    </div>
+  </div>
+  <a href="https://wa.me/527221234567?text=Hola%20Dental%20García%2C%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="btn btn-wa wa-btn-big">
+    <span>💬</span> Escribir por WhatsApp
+  </a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-logo">Dental<span>García</span></div>
+      <p>Tu sonrisa, nuestra especialidad. Cuidamos tu salud bucal con pasión y profesionalismo en Toluca, Estado de México.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Servicios</h4>
+      <a href="#servicios">Limpieza Dental</a>
+      <a href="#servicios">Blanqueamiento</a>
+      <a href="#servicios">Ortodoncia</a>
+      <a href="#servicios">Implantes Dentales</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p>📍 Toluca, Estado de México</p>
+      <p>📱 722 123 4567</p>
+      <a href="https://wa.me/527221234567" target="_blank">💬 WhatsApp directo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Dental García – Todos los derechos reservados | Toluca, Estado de México</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/527221234567?text=Hola%20Dental%20García%2C%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="wa-float">
+  <span>💬</span><span>¡Agenda tu cita!</span>
+</a>
+
+</body></html>
