@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dental García - Tu sonrisa, nuestra especialidad</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+            line-height: 1.5;
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin: 0.5rem 0;
+        }
+        .hero p {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+        }
+        .hero button {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: none;
+            color: #0ea5e9;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .hero button:hover {
+            background: #e0f2fe;
+        }
+        .services {
+            padding: 2rem 1rem;
+            background: #f0f9ff;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2rem;
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+        }
+        .services .service {
+            display: inline-block;
+            width: calc(50% - 1rem);
+            margin: 0.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .services .service h3 {
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+        .services .service p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        .services .service: nth-child(odd) {
+            background: #e0f7fa;
+        }
+        .about {
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        .about h2 {
+            font-size: 2rem;
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+        }
+        .about p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+        .contact {
+            padding: 2rem 1rem;
+            background: #f0f9ff;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2rem;
+            color: #0ea5e9;
+            margin-bottom: 1rem;
+        }
+        .contact p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+        .footer {
+            background: #0ea5e9;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .whatsapp-button {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            background-color: #25d366;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            cursor: pointer;
+        }
+        .whatsapp-icon {
+            font-size: 24px;
+            color: white;
+        }
+        @media (min-width: 768px) {
+            .services .service {
+                width: calc(25% - 1rem);
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Dental García</h1>
+        <p>Tu sonrisa, nuestra especialidad</p>
+        <button>Agenda tu cita</button>
+    </section>
+    <section class="services">
+        <h2>Servicios</h2>
+        <div class="service">
+            <h3>🪥 Limpieza Dental</h3>
+            <p>Remueve placa y sarro para una sonrisa sana.</p>
+        </div>
+        <div class="service">
+            <h3>✨ Blanqueamiento</h3>
+            <p>Logra dientes más blancos y brillantes.</p>
+        </div>
+        <div class="service">
+            <h3>🦷 Ortodoncia</h3>
+            <p>Alineamos tus dientes con tecnología avanzada.</p>
+        </div>
+        <div class="service">
+            <h3>🛠️ Extracciones</h3>
+            <p>Extracciones seguras y sin dolor.</p>
+        </div>
+        <div class="service">
+            <h3>👨‍⚕️ Implantes</h3>
+            <p>Reemplazo dental duradero y efectivo.</p>
+        </div>
+    </section>
+    <section class="about">
+        <h2>Nosotros</h2>
+        <p>En Dental García, en Toluca, Estado de México, nos especializamos en cuidar de tu salud bucal con profesionalismo y dedicación. Nuestro equipo de expertos ofrece un servicio excepcional usando la última tecnología para asegurar siempre tu satisfacción.</p>
+    </section>
+    <section class="contact">
+        <h2>Contacto</h2>
+        <p>Estamos ubicados en Toluca, Estado de México. Contáctanos para cualquier consulta.</p>
+        <p><strong>Teléfono:</strong> 527221234567</p>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2023 Dental García. Todos los derechos reservados.</p>
+    </footer>
+    <a href="https://wa.me/527221234567" class="whatsapp-button" aria-label="WhatsApp">
+        <span class="whatsapp-icon">📞</span>
+    </a>
+</body>
+</html>
