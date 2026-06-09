@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>SmileLab – Tu sonrisa, nuestra especialidad | Toluca</title><style>
+:root{--primary:#0ea5e9;--primary-dark:#0284c7;--accent:#f97316;--accent2:#a855f7;--text:#1e293b;--light:#f0f9ff;--dark:#0f172a;--card-r:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;color:var(--text);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+.btn{display:inline-block;padding:.9rem 2.2rem;border-radius:50px;font-weight:700;font-size:1rem;cursor:pointer;transition:all .3s ease;border:none}
+.btn-white{background:#fff;color:var(--primary);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(0,0,0,.25)}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:900;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 16px rgba(14,165,233,.1)}
+.logo{font-size:1.5rem;font-weight:900;color:var(--primary)}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-weight:600;color:var(--text);transition:color .3s}
+.nav-links a:hover{color:var(--primary)}
+/* HERO */
+#hero{min-height:100vh;background:linear-gradient(135deg,#0ea5e9 0%,#a855f7 50%,#f97316 100%);display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 6rem;position:relative;overflow:hidden}
+#hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-badge{background:rgba(255,255,255,.2);color:#fff;padding:.4rem 1.2rem;border-radius:50px;font-size:.85rem;font-weight:700;display:inline-block;margin-bottom:1.5rem;backdrop-filter:blur(8px)}
+#hero h1{font-size:clamp(2.4rem,6vw,4.2rem);color:#fff;font-weight:900;line-height:1.1;margin-bottom:1rem;text-shadow:0 4px 20px rgba(0,0,0,.15)}
+#hero p{font-size:clamp(1.05rem,2vw,1.35rem);color:rgba(255,255,255,.9);max-width:580px;margin:0 auto 2.5rem;line-height:1.6}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 8px 24px rgba(249,115,22,.4)}
+.btn-accent:hover{background:#ea6c00;transform:translateY(-3px)}
+.floating-emoji{position:absolute;font-size:3rem;animation:floatUp 6s ease-in-out infinite;opacity:.6}
+.fe1{top:15%;left:8%;animation-delay:0s}
+.fe2{top:20%;right:10%;animation-delay:1.5s}
+.fe3{bottom:20%;left:12%;animation-delay:3s}
+.fe4{bottom:25%;right:8%;animation-delay:2s}
+@keyframes floatUp{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-20px) rotate(5deg)}}
+/* SERVICIOS */
+#servicios{padding:6rem 2rem;background:var(--light)}
+.section-title{text-align:center;margin-bottom:3.5rem}
+.section-title h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--text);margin-bottom:.5rem}
+.section-title p{color:#64748b;font-size:1.1rem}
+.badge-tag{display:inline-block;background:var(--primary);color:#fff;padding:.3rem 1rem;border-radius:50px;font-size:.8rem;font-weight:700;margin-bottom:.8rem}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.card{background:#fff;border-radius:var(--card-r);padding:2.5rem 2rem;text-align:center;box-shadow:0 4px 24px rgba(14,165,233,.08);transition:all .3s ease;border:2px solid transparent;cursor:default}
+.card:hover{transform:translateY(-8px);box-shadow:0 16px 48px rgba(14,165,233,.18);border-color:var(--primary)}
+.card-emoji{font-size:3.5rem;margin-bottom:1.2rem;display:block}
+.card h3{font-size:1.4rem;font-weight:800;margin-bottom:.8rem;color:var(--text)}
+.card p{color:#64748b;line-height:1.7;font-size:.97rem}
+.card.c1{border-top:4px solid #0ea5e9}
+.card.c2{border-top:4px solid #a855f7}
+.card.c3{border-top:4px solid #f97316}
+.price-tag{display:inline-block;margin-top:1.2rem;background:var(--light);color:var(--primary);font-weight:800;padding:.4rem 1.2rem;border-radius:50px;font-size:.9rem}
+/* NOSOTROS */
+#nosotros{padding:6rem 2rem;background:#fff}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
+.two-col h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;margin-bottom:1.2rem}
+.two-col p{color:#64748b;line-height:1.8;margin-bottom:1.5rem}
+.benefits{list-style:none;display:flex;flex-direction:column;gap:.8rem}
+.benefits li{display:flex;align-items:center;gap:.8rem;font-size:1rem;color:var(--text);font-weight:500}
+.benefits li::before{content:'✅';font-size:1.1rem}
+.accent-box{background:linear-gradient(135deg,#0ea5e9,#a855f7);border-radius:var(--card-r);padding:3rem 2rem;color:#fff;text-align:center}
+.accent-box .big-emoji{font-size:4rem;display:block;margin-bottom:1rem}
+.accent-box h3{font-size:1.6rem;font-weight:800;margin-bottom:.8rem}
+.accent-box p{opacity:.9;line-height:1.7;font-size:.97rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.stat{background:rgba(255,255,255,.2);border-radius:12px;padding:1rem;backdrop-filter:blur(6px)}
+.stat .num{font-size:2rem;font-weight:900;display:block}
+.stat .lbl{font-size:.8rem;opacity:.9}
+/* CTA STRIP */
+.cta-strip{background:linear-gradient(90deg,var(--accent),#f97316 60%,#fbbf24);padding:4rem 2rem;text-align:center}
+.cta-strip h2{font-size:clamp(1.5rem,3.5vw,2.2rem);color:#fff;font-weight:900;margin-bottom:1rem}
+.cta-strip p{color:rgba(255,255,255,.9);margin-bottom:2rem;font-size:1.05rem}
+/* CONTACTO */
+#contacto{padding:6rem 2rem;background:var(--dark);text-align:center}
+#contacto h2{font-size:clamp(1.8rem,4vw,2.6rem);color:#fff;font-weight:900;margin-bottom:1rem}
+#contacto p{color:#94a3b8;font-size:1.05rem;margin-bottom:2.5rem;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7}
+.contact-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-bottom:3rem}
+.contact-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem 2rem;color:#e2e8f0;min-width:200px;backdrop-filter:blur(4px)}
+.contact-item .icon{font-size:2rem;display:block;margin-bottom:.5rem}
+.contact-item strong{display:block;font-size:1rem;color:#fff;margin-bottom:.3rem}
+.contact-item span{font-size:.9rem;color:#94a3b8}
+.btn-wa{background:#25D366;color:#fff;font-size:1.15rem;padding:1.1rem 3rem;border-radius:50px;display:inline-flex;align-items:center;gap:.7rem;box-shadow:0 8px 32px rgba(37,211,102,.4);font-weight:700;transition:all .3s}
+.btn-wa:hover{background:#1db954;transform:translateY(-3px);box-shadow:0 14px 40px rgba(37,211,102,.5)}
+/* FOOTER */
+footer{background:#020617;padding:4rem 2rem 2rem;color:#64748b}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;max-width:1100px;margin:0 auto 3rem}
+footer h4{color:#e2e8f0;font-size:1.05rem;font-weight:700;margin-bottom:1rem}
+footer ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+footer ul li a{color:#64748b;font-size:.9rem;transition:color .3s}
+footer ul li a:hover{color:var(--primary)}
+footer p{font-size:.9rem;line-height:1.7}
+.footer-logo{font-size:1.6rem;font-weight:900;color:var(--primary);margin-bottom:.5rem}
+.footer-logo span{color:var(--accent)}
+.footer-bottom{border-top:1px solid #1e293b;padding-top:1.5rem;text-align:center;font-size:.85rem;color:#334155;max-width:1100px;margin:0 auto}
+/* FLOAT */
+.wa-float{position:fixed;bottom:24px;right:24px;background:#25D366;color:#fff;border-radius:50px;padding:.85rem 1.6rem;display:flex;align-items:center;gap:.6rem;font-weight:700;font-size:.95rem;box-shadow:0 6px 24px rgba(37,211,102,.45);z-index:999;animation:pulse 2.5s infinite}
+.wa-float:hover{background:#1db954;transform:translateY(-2px)}
+@keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45)}50%{box-shadow:0 6px 36px rgba(37,211,102,.75)}}
+@media(max-width:768px){.two-col{grid-template-columns:1fr}.nav-links{display:none}.stats{grid-template-columns:1fr 1fr}}
+</style></head>
+<body>
+<nav>
+  <div class="logo">Smile<span>Lab</span> 🦷</div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="btn btn-primary" style="font-size:.9rem;padding:.65rem 1.5rem">Agendar cita</a>
+</nav>
+
+<section id="hero">
+  <span class="floating-emoji fe1">✨</span>
+  <span class="floating-emoji fe2">🦷</span>
+  <span class="floating-emoji fe3">😁</span>
+  <span class="floating-emoji fe4">💎</span>
+  <div>
+    <div class="hero-badge">📍 Toluca, Estado de México</div>
+    <h1>Tu sonrisa,<br>nuestra especialidad</h1>
+    <p>En SmileLab transformamos tu sonrisa con tecnología de vanguardia, calidez humana y los mejores especialistas de Toluca.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn btn-white">Agendar cita gratuita 🗓️</a>
+      <a href="#servicios" class="btn btn-accent">Ver servicios ✨</a>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="section-title">
+    <div class="badge-tag">⭐ Nuestros servicios</div>
+    <h2>Todo lo que tu sonrisa necesita</h2>
+    <p>Tratamientos modernos, seguros y accesibles para toda la familia en Toluca</p>
+  </div>
+  <div class="grid-3">
+    <div class="card c1">
+      <span class="card-emoji">🌟</span>
+      <h3>Blanqueamiento Dental</h3>
+      <p>Recupera el brillo natural de tus dientes con nuestro tratamiento de blanqueamiento profesional. Resultados visibles desde la primera sesión, sin sensibilidad.</p>
+      <span class="price-tag">Desde 1 sesión 🦷</span>
+    </div>
+    <div class="card c2">
+      <span class="card-emoji">🔩</span>
+      <h3>Implantes Dentales</h3>
+      <p>Recupera tu sonrisa completa con implantes de titanio de alta calidad. La solución más duradera y natural para dientes perdidos. ¡Luce como nuevos!</p>
+      <span class="price-tag">Implantes Premium 💎</span>
+    </div>
+    <div class="card c3">
+      <span class="card-emoji">😬</span>
+      <h3>Ortodoncia</h3>
+      <p>Corrige la alineación de tus dientes con ortodoncia tradicional o invisible. Para niños, jóvenes y adultos. Una sonrisa perfecta a cualquier edad.</p>
+      <span class="price-tag">Brackets e Invisalign ✨</span>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros">
+  <div class="two-col">
+    <div>
+      <div class="badge-tag">💙 ¿Por qué elegirnos?</div>
+      <h2>Más que una clínica,<br>somos tu familia dental 😊</h2>
+      <p>En SmileLab combinamos tecnología de vanguardia con un ambiente cálido y familiar. Nuestro equipo de especialistas en Toluca está comprometido con tu bienestar y la salud de tu sonrisa.</p>
+      <ul class="benefits">
+        <li>Equipo de especialistas certificados y con experiencia</li>
+        <li>Tecnología de última generación en diagnóstico y tratamiento</li>
+        <li>Ambiente amigable, sin dolor ni miedo al dentista</li>
+        <li>Horarios flexibles para adaptarnos a ti</li>
+        <li>Planes de pago accesibles y facilidades</li>
+        <li>Atención personalizada para toda la familia</li>
+        <li>Ubicación céntrica en Toluca, Estado de México</li>
+      </ul>
+    </div>
+    <div class="accent-box">
+      <span class="big-emoji">🏆</span>
+      <h3>Líderes en salud dental en Toluca</h3>
+      <p>Años de experiencia transformando sonrisas y vidas. Nuestros pacientes confían en nosotros porque nos importa cada detalle de su tratamiento.</p>
+      <div class="stats">
+        <div class="stat"><span class="num">500+</span><span class="lbl">Pacientes felices</span></div>
+        <div class="stat"><span class="num">10+</span><span class="lbl">Años de experiencia</span></div>
+        <div class="stat"><span class="num">3</span><span class="lbl">Especialidades</span></div>
+        <div class="stat"><span class="num">100%</span><span class="lbl">Satisfacción garantizada</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-strip">
+  <h2>🎉 ¡Primera consulta completamente gratis!</h2>
+  <p>Agenda hoy mismo y descubre el tratamiento ideal para tu sonrisa sin costo. ¡Plazas limitadas!</p>
+  <a href="#contacto" class="btn btn-white" style="color:var(--accent)">Quiero mi consulta gratis 🦷</a>
+</div>
+
+<section id="contacto">
+  <h2>¡Hablemos hoy! 💬</h2>
+  <p>Estamos listos para transformar tu sonrisa. Contáctanos por WhatsApp, visítanos o escríbenos. Siempre hay un especialista para ti en Toluca.</p>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <span class="icon">📍</span>
+      <strong>Ubicación</strong>
+      <span>Toluca, Estado de México</span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">🕐</span>
+      <strong>Horario</strong>
+      <span>Lun–Vie 9am–7pm<br>Sáb 9am–3pm</span>
+    </div>
+    <div class="contact-item">
+      <span class="icon">😁</span>
+      <strong>Especialidades</strong>
+      <span>Blanqueamiento · Implantes · Ortodoncia</span>
+    </div>
+  </div>
+  <a href="https://wa.me/521XXXXXXXXXX?text=Hola%20SmileLab%2C%20me%20interesa%20agendar%20una%20cita%20gratuita%20😁" class="btn-wa" target="_blank">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Escribir por WhatsApp ahora
+  </a>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Smile<span>Lab</span> 🦷</div>
+      <p style="font-size:.9rem;line-height:1.7">Tu clínica dental de confianza en Toluca, Estado de México. Transformamos sonrisas con amor y tecnología.</p>
+    </div>
+    <div>
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="#servicios">🌟 Blanqueamiento Dental</a></li>
+        <li><a href="#servicios">🔩 Implantes Dentales</a></li>
+        <li><a href="#servicios">😬 Ortodoncia</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="#contacto">📍 Toluca, Edo. de México</a></li>
+        <li><a href="#contacto">💬 WhatsApp disponible</a></li>
+        <li><a href="#contacto">🗓️ Primera consulta gratis</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 SmileLab – Todos los derechos reservados. Toluca, Estado de México 💙</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/521XXXXXXXXXX?text=Hola%20SmileLab%2C%20quiero%20agendar%20una%20cita%20😁" class="wa-float" target="_blank">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  WhatsApp
+</a>
+</body></html>
